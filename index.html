@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aneeza Shakeel — Product Manager</title>
+<meta name="description" content="Aneeza Shakeel, product manager in New York. Founding PM, startup co-founder, and AI initiatives at John Jay College (CUNY)." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --cream: #FFFCF6;
+    --card: #FFFFFF;
+    --ink: #3A3246;
+    --ink-2: #5E566A;
+    --ink-3: #8E869A;
+    --line: #EDE4DA;
+    --rose: #C4637A;
+    --blush: #F8E2DE;
+    --sky: #DDE8F1;
+    --sage: #E2EEDD;
+    --butter: #FBF0CC;
+    --plum: #2E2838;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--cream); color: var(--ink); font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 700; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  @media (max-width: 600px) { .container { padding: 0 20px; } }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 20; background: rgba(255,252,246,0.92); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 66px; }
+  .mark { font-family: 'Fraunces', serif; font-weight: 700; font-size: 24px; text-decoration: none; }
+  .mark span { color: var(--rose); }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
+  .nav-links a { font-weight: 700; font-size: 15px; color: var(--ink-2); text-decoration: none; }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-links a.pill { color: #fff; background: var(--ink); padding: 8px 18px; border-radius: 999px; }
+  .nav-links a.pill:hover { background: var(--rose); color: #fff; }
+  @media (max-width: 760px) { .nav-links a:not(.pill) { display: none; } }
+
+  /* hero */
+  .hero { padding: 84px 0 64px; }
+  .hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: center; }
+  .clock { display: inline-block; font-size: 14px; font-weight: 600; color: var(--ink-2); background: var(--butter); padding: 6px 14px; border-radius: 999px; margin: 0 0 22px; }
+  .clock span { color: var(--rose); font-weight: 700; }
+  h1.name { font-size: clamp(60px, 9.5vw, 116px); line-height: 0.92; letter-spacing: -0.03em; margin: 0 0 30px; }
+  h1.name .last { display: block; padding-left: 0.9em; font-style: italic; font-weight: 600; color: var(--rose); }
+  .lede { font-size: 22px; line-height: 1.45; max-width: 30ch; margin: 0 0 16px; }
+  .sub { color: var(--ink-2); max-width: 52ch; margin: 0 0 32px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 22px; border-radius: 999px; border: 2px solid var(--ink); transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .btn-solid { background: var(--ink); color: #fff; }
+  .btn-solid:hover { background: var(--rose); border-color: var(--rose); }
+  .btn-ghost:hover { background: var(--ink); color: #fff; }
+
+  .portrait { justify-self: end; width: 100%; max-width: 350px; margin: 0; }
+  .arch { position: relative; aspect-ratio: 1 / 1; width: 100%; border-radius: 20px; overflow: hidden; background: var(--blush); outline: 2px solid var(--blush); outline-offset: 10px; }
+  .arch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .arch .initials { position: absolute; inset: 0; display: none; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-weight: 700; font-size: 96px; color: var(--rose); }
+  .arch.no-photo img { display: none; }
+  .arch.no-photo .initials { display: flex; }
+  .caption { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 18px; color: var(--ink-3); text-align: center; margin: 22px 0 0; }
+  @media (max-width: 860px) {
+    .hero { padding: 52px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    .portrait { justify-self: start; max-width: 230px; order: -1; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(14px); animation: rise .8s cubic-bezier(.2,.7,.2,1) forwards; }
+    .d1 { animation-delay: .05s; } .d2 { animation-delay: .15s; } .d3 { animation-delay: .28s; } .d4 { animation-delay: .4s; } .d5 { animation-delay: .5s; } .d6 { animation-delay: .25s; }
+    @keyframes rise { to { opacity: 1; transform: none; } }
+  }
+
+  /* intro */
+  .intro-wrap { padding: 0 0 88px; }
+  .intro { background: var(--blush); border-radius: 24px; padding: 40px 44px; display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: start; }
+  .intro h2 { font-size: 34px; line-height: 1.05; letter-spacing: -0.01em; margin: 0; }
+  .intro h2 span { display: block; font-style: italic; font-weight: 600; color: var(--rose); }
+  .intro p { margin: 0 0 12px; font-size: 18px; max-width: 60ch; }
+  .intro p:last-child { margin-bottom: 0; color: var(--ink-2); }
+  @media (max-width: 860px) { .intro { grid-template-columns: 1fr; gap: 16px; padding: 30px 24px; } .intro-wrap { padding-bottom: 56px; } }
+
+  /* bands */
+  section { padding: 96px 0; }
+  .band-sky { background: var(--sky); }
+  .band-sage { background: var(--sage); }
+  .band-butter { background: var(--butter); }
+  .section-head { display: grid; grid-template-columns: 240px 1fr; gap: 40px; margin-bottom: 48px; align-items: end; }
+  .section-head h2 { font-size: 48px; line-height: 1; letter-spacing: -0.02em; margin: 0; }
+  .section-head p { color: var(--ink-2); max-width: 52ch; margin: 0; }
+  @media (max-width: 860px) { section { padding: 64px 0; } .section-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 32px; } .section-head h2 { font-size: 40px; } }
+
+  /* work */
+  .role { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 36px 40px; background: var(--card); border-radius: 24px; margin-bottom: 18px; }
+  .role-when { font-size: 14px; font-weight: 700; color: var(--ink-3); padding-top: 10px; }
+  .role h3 { font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 4px; }
+  .org { font-weight: 700; font-size: 15.5px; color: var(--rose); margin: 0 0 20px; }
+  .call { margin: 0 0 20px; padding: 14px 18px; border-radius: 14px; background: var(--butter); max-width: 60ch; }
+  .role:nth-of-type(2) .call { background: var(--blush); }
+  .role:nth-of-type(3) .call { background: var(--sage); }
+  .role:nth-of-type(4) .call { background: var(--sky); }
+  .call b { display: block; font-size: 13px; font-weight: 700; color: var(--ink-2); margin-bottom: 2px; }
+  .call span { font-family: 'Fraunces', serif; font-weight: 600; font-style: italic; font-size: 21px; line-height: 1.3; }
+  .role ul { margin: 0; padding-left: 20px; max-width: 64ch; }
+  .role li { color: var(--ink-2); margin-bottom: 9px; }
+  .role li::marker { color: var(--rose); }
+  @media (max-width: 860px) { .role { grid-template-columns: 1fr; gap: 6px; padding: 28px 24px; } .role-when { padding-top: 0; } }
+
+  /* projects */
+  .case { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 36px 40px; background: var(--card); border-radius: 24px; margin-bottom: 18px; }
+  .case-meta { font-size: 14px; font-weight: 700; color: var(--ink-3); padding-top: 10px; }
+  .case h3 { font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 20px; }
+  .case dl { margin: 0; display: grid; grid-template-columns: 110px 1fr; gap: 12px 24px; max-width: 70ch; }
+  .case dt { font-size: 14px; font-weight: 700; color: var(--rose); padding-top: 3px; }
+  .case dd { margin: 0; color: var(--ink-2); }
+  @media (max-width: 860px) { .case { grid-template-columns: 1fr; gap: 6px; padding: 28px 24px; } .case-meta { padding-top: 0; } .case dl { grid-template-columns: 1fr; gap: 2px; } .case dd { margin-bottom: 12px; } }
+
+  .shelf { margin-top: 40px; }
+  .shelf h3 { font-size: 28px; margin: 0 0 6px; }
+  .shelf > p { color: var(--ink-2); margin: 0 0 20px; }
+  .repos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .repo { text-decoration: none; background: var(--card); border-radius: 18px; padding: 18px 20px; border: 2px solid transparent; transition: border-color .15s ease, transform .15s ease; }
+  .repo:hover { border-color: var(--ink); transform: translateY(-2px); }
+  .repo strong { display: block; font-weight: 700; }
+  .repo span { display: block; color: var(--ink-2); font-size: 15px; line-height: 1.45; margin-top: 4px; }
+  @media (max-width: 860px) { .repos { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .repos { grid-template-columns: 1fr; } }
+
+  /* background */
+  .bg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .bg-card { background: var(--card); border-radius: 24px; padding: 28px; }
+  .bg-card h3 { font-size: 20px; margin: 0 0 14px; }
+  .bg-item { margin-bottom: 16px; }
+  .bg-item:last-child { margin-bottom: 0; }
+  .bg-item strong { display: block; font-weight: 700; }
+  .bg-item span { color: var(--ink-2); font-size: 15.5px; }
+  .story { font-family: 'Fraunces', serif; font-weight: 600; font-size: 22px; line-height: 1.4; margin: 0; }
+  @media (max-width: 860px) { .bg-grid { grid-template-columns: 1fr; } }
+
+  .kit { margin: 18px 0 0; background: var(--card); border-radius: 24px; padding: 28px 32px; display: grid; grid-template-columns: 200px 1fr; gap: 14px 32px; }
+  .kit dt { font-weight: 700; font-size: 15px; padding-top: 5px; }
+  .kit dd { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { font-size: 14.5px; font-weight: 600; padding: 5px 13px; border-radius: 999px; }
+  .kit dd:nth-of-type(1) .chip { background: var(--blush); }
+  .kit dd:nth-of-type(2) .chip { background: var(--sky); }
+  .kit dd:nth-of-type(3) .chip { background: var(--sage); }
+  .kit dd:nth-of-type(4) .chip { background: var(--butter); }
+  @media (max-width: 860px) { .kit { grid-template-columns: 1fr; gap: 6px; padding: 24px; } .kit dd { margin-bottom: 14px; } }
+
+  /* footer */
+  footer { background: var(--plum); color: #F4EEF6; padding: 104px 0 44px; }
+  footer h2 { font-size: clamp(46px, 7vw, 84px); line-height: 1; letter-spacing: -0.02em; margin: 0 0 22px; }
+  footer h2 span { color: #F2B6C2; font-style: italic; font-weight: 600; }
+  footer p { color: #C9BFD2; max-width: 48ch; font-size: 18px; margin: 0 0 36px; }
+  .f-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .f-links a { text-decoration: none; font-weight: 700; font-size: 15px; color: #F4EEF6; border: 2px solid rgba(244,238,246,0.35); padding: 11px 20px; border-radius: 999px; }
+  .f-links a:hover { background: #F4EEF6; color: var(--plum); }
+  .f-links a:first-child { background: #F2B6C2; color: var(--plum); border-color: #F2B6C2; }
+  .fine { margin-top: 88px; font-size: 14px; color: #A99FB4; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="mark" href="#top">Aneeza<span>.</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+      <a class="pill" data-link="resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <p class="clock reveal d1" id="clock">New York, NY</p>
+      <h1 class="name reveal d2">Aneeza <span class="last">Shakeel</span></h1>
+      <p class="lede reveal d3">I find the part of a workflow that's quietly breaking, then build the fix.</p>
+      <p class="sub reveal d4">Product manager. Founding PM at a pre-seed AI startup, co-founder of CurateAI, and now leading AI initiatives for student success at John Jay College (CUNY). Master's in Engineering at NYU.</p>
+      <div class="cta reveal d5">
+        <a class="btn btn-solid" data-link="email" href="#">Email me</a>
+        <a class="btn btn-ghost" data-link="resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        <a class="btn btn-ghost" data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <figure class="portrait reveal d6">
+      <div class="arch" id="arch">
+        <img src="me.jpg" alt="Aneeza Shakeel" onerror="document.getElementById('arch').classList.add('no-photo')">
+        <div class="initials">AS</div>
+      </div>
+      <figcaption class="caption">me, mid-roadmap</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="intro-wrap" id="hi">
+  <div class="container">
+    <div class="intro">
+      <h2>Hey, <span>nice to meet you.</span></h2>
+      <div>
+        <p>I'm Aneeza. I started out in a chemistry lab, switched to code, and figured out my favorite part of any project is deciding what's actually worth building.</p>
+        <p>Outside of work, I'm usually picking up a new language, falling down a history rabbit hole, or finding another corner of New York to explore.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="work" class="band-sky">
+  <div class="container">
+    <div class="section-head">
+      <h2>Work</h2>
+      <p>Each role below has one decision that shaped the rest of the work. That call is up top; the results follow.</p>
+    </div>
+
+    <article class="role">
+      <div class="role-when">Feb 2026 – Present</div>
+      <div>
+        <h3>AI Initiatives Project Coordinator</h3>
+        <p class="org">Student Success &amp; Innovation, John Jay College (CUNY)</p>
+        <div class="call"><b>The call</b><span>Build tools other teams can reuse, not one-off fixes.</span></div>
+        <ul>
+          <li>Lead AI initiatives across student success programs, increasing student engagement 12% across events, Summer Bridge, and first-year programming</li>
+          <li>Co-developed a cross-department communications dashboard with the Director of Undergraduate Foundations, aligning student outreach across 5 units</li>
+          <li>Launched an AI-literacy platform and workshop series preparing first-year students to use AI in coursework and careers</li>
+          <li>Designing and building two AI tools for student success: a Copilot Studio agent that rewrites outreach in strength-based language, and an advising assistant that answers seniors' credit, commencement, and grad school questions at first contact</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="role-when">Oct 2025 – Present</div>
+      <div>
+        <h3>Student Marketing Ambassador</h3>
+        <p class="org">JobRight.ai, Remote</p>
+        <div class="call"><b>The call</b><span>Treat every post as an experiment with a signup goal.</span></div>
+        <ul>
+          <li>Run growth experiments on JobRight's content funnel, testing hooks, copy length, and CTAs to find the formats that convert to signups</li>
+          <li>Isolated a post structure that drove 41% of a month's content-attributed signups from a single post, then turned it into a repeatable playbook</li>
+          <li>Scaled reach to 50,000+ monthly impressions and 6,000+ followers through data-driven iteration</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="role-when">Jan 2025 – Jul 2025</div>
+      <div>
+        <h3>Founding AI Product Manager</h3>
+        <p class="org">Mela AI (pre-seed), Remote</p>
+        <div class="call"><b>The call</b><span>Stop shipping features until onboarding stops losing users.</span></div>
+        <ul>
+          <li>Took Mela AI from 0→1 alongside the founder, owning product strategy, roadmap, and launch for the v2 platform</li>
+          <li>Diagnosed onboarding as the core drop-off point and deprioritized new features to rebuild it, cutting dropout from 40% to 6% and lifting profile completion to 85%</li>
+          <li>Made build-vs-fix and scope trade-offs across engineering and design, working in the codebase directly to ship core features and balance speed against technical debt</li>
+          <li>Built the product roadmap from competitive and market research, prioritizing features by user impact and effort</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="role-when">Jul 2024 – Dec 2024</div>
+      <div>
+        <h3>Co-Founder</h3>
+        <p class="org">CurateAI, New York</p>
+        <div class="call"><b>The call</b><span>Put it in front of real users before it feels finished.</span></div>
+        <ul>
+          <li>Co-founded an AI startup that turns resumes into portfolio websites, taking it from idea to launched product on a 3-person founding team</li>
+          <li>Owned go-to-market, acquiring 50+ users and converting 2 to paying customers within the first month of launch</li>
+          <li>Pitched CurateAI to investors and a unicorn founder after being selected from ~1,000 teams in the Headstarter AI Fellowship</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="projects" class="band-sage">
+  <div class="container">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <p>Two stories told as problem, move, and result, plus the things I've built along the way.</p>
+    </div>
+
+    <article class="case">
+      <div class="case-meta">Headstarter Hackathon</div>
+      <div>
+        <h3>Pam: AI call automation for car dealerships</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>A 4-person team with a hard deadline, requirements that kept shifting, and engineers who needed to stay heads-down in the code.</dd>
+          <dt>What I did</dt>
+          <dd>Owned delivery: documentation, timeline, scope, and submission. I turned hackathon updates into clear next steps so nobody had to stop building to figure out what changed.</dd>
+          <dt>Result</dt>
+          <dd>Shipped a complete product on deadline. The prototype was merged into Pam's early codebase, and Pam now serves 800+ dealerships.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-meta">TikTok/LEAP Externship<br>Feb – Apr 2026</div>
+      <div>
+        <h3>Brand strategy playbook for an e-commerce client</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>A client with no clear position in a crowded, fragmented market, and no system for producing consistent content.</dd>
+          <dt>What I did</dt>
+          <dd>Mapped the competitive landscape, defined positioning, and built a repeatable tone framework, caption structure, and TikTok template pack. Mentored by a former TikTok, Apple, and Meta executive.</dd>
+          <dt>Result</dt>
+          <dd>Delivered the full go-to-market package on my own: competitive analysis, pilot content calendar, and a pitch-ready brand playbook.</dd>
+        </dl>
+      </div>
+    </article>
+
+    <div class="shelf">
+      <h3>Built along the way</h3>
+      <p>Vibe-coded prototypes and experiments. Code lives on GitHub.</p>
+      <div class="repos" id="repos"></div>
+    </div>
+  </div>
+</section>
+
+<section id="background" class="band-butter">
+  <div class="container">
+    <div class="section-head">
+      <h2>Background</h2>
+      <p>The short version of how a chemistry student ended up building AI products.</p>
+    </div>
+
+    <div class="bg-grid">
+      <div class="bg-card">
+        <h3>How I got here</h3>
+        <p class="story">I started in pre-pharmacy chemistry, switched to computer science, and found that the part I loved most was figuring out what to build and why.</p>
+      </div>
+      <div class="bg-card">
+        <h3>Education</h3>
+        <div class="bg-item"><strong>New York University</strong><span>Master's in Engineering, 2025 – 2027 (GPA 3.9)</span></div>
+        <div class="bg-item"><strong>John Jay College (CUNY)</strong><span>B.S. in Computer Science, 2023 – 2025</span></div>
+      </div>
+      <div class="bg-card">
+        <h3>Research</h3>
+        <div class="bg-item"><strong>Propaganda detection</strong><span>Sentence-level BERT model; short paper at ILA 2026</span></div>
+        <div class="bg-item"><strong>Hybrid intrusion detection</strong><span>Drift-aware learning for network security; under review</span></div>
+        <h3 style="margin-top:24px">Off the clock</h3>
+        <div class="bg-item"><span>Learning languages, and reading about how different cultures are, and how much they're not.</span></div>
+      </div>
+    </div>
+
+    <dl class="kit">
+      <dt>AI &amp; building</dt>
+      <dd><span class="chip">Microsoft Copilot Studio</span><span class="chip">Prompt design</span><span class="chip">LLM evaluation</span><span class="chip">RAG chatbots</span><span class="chip">Vibe coding: Lovable, Replit, Claude</span></dd>
+      <dt>Product</dt>
+      <dd><span class="chip">Product strategy</span><span class="chip">Roadmapping</span><span class="chip">Prioritization</span><span class="chip">User research</span><span class="chip">Go-to-market</span><span class="chip">Stakeholder management</span><span class="chip">A/B testing</span></dd>
+      <dt>Growth &amp; research</dt>
+      <dd><span class="chip">Growth experimentation</span><span class="chip">Funnel analytics</span><span class="chip">Competitive analysis</span><span class="chip">Market research</span></dd>
+      <dt>Tools &amp; data</dt>
+      <dd><span class="chip">Figma</span><span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Power BI</span><span class="chip">Notion</span><span class="chip">Asana</span></dd>
+    </dl>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <h2>Let's <span>talk.</span></h2>
+    <p>Open to product roles, and always happy to reconnect or trade ideas.</p>
+    <div class="f-links">
+      <a data-link="email" href="#">Email</a>
+      <a data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+      <a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a data-link="resume" href="resume.pdf" target="_blank" rel="noopener">Résumé</a>
+    </div>
+    <div class="fine">© <span id="year">2026</span> Aneeza Shakeel</div>
+  </div>
+</footer>
+
+<script>
+  // ============ EDIT YOUR LINKS HERE ============
+  const LINKS = {
+    email: 'mailto:aneezashakeel61@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/aneeza-s-7a25782a4',
+    github: 'https://github.com/aneezahere',
+    resume: 'resume.pdf'
+  };
+
+  // GitHub projects (name must match the repo name exactly)
+  const REPOS = [
+    { name: 'stocks-automation', label: 'stocks-automation', desc: 'Plain-language stock dashboard for first-time investors' },
+    { name: 'codebase-rag', label: 'codebase-rag', desc: 'Chat with any GitHub codebase to understand what each file does' },
+    { name: 'PR-REVIEW-BOT', label: 'PR-REVIEW-BOT', desc: 'AI summaries of pull requests before you read the diff' },
+    { name: 'llm-evaluation', label: 'llm-evaluation', desc: 'Same prompts across four models, compared side by side' },
+    { name: 'Fraud_detection', label: 'Fraud_detection', desc: 'Model that flags fraudulent transactions' },
+    { name: 'churn-prediction-', label: 'churn-prediction', desc: 'Predicts which bank customers will come back' }
+  ];
+  // ==============================================
+
+  document.querySelectorAll('[data-link]').forEach(a => { if (LINKS[a.dataset.link]) a.href = LINKS[a.dataset.link]; });
+
+  const repoWrap = document.getElementById('repos');
+  REPOS.forEach(r => {
+    const a = document.createElement('a');
+    a.className = 'repo';
+    a.href = LINKS.github.replace(/\/$/, '') + '/' + r.name;
+    a.target = '_blank'; a.rel = 'noopener';
+    a.innerHTML = '<strong></strong><span></span>';
+    a.querySelector('strong').textContent = r.label;
+    a.querySelector('span').textContent = r.desc;
+    repoWrap.appendChild(a);
+  });
+
+  const clock = document.getElementById('clock');
+  function tick() {
+    const t = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+    clock.innerHTML = "It's <span>" + t + '</span> in New York';
+  }
+  tick(); setInterval(tick, 30000);
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
